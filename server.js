@@ -6,8 +6,23 @@ const dotenv = require("dotenv");
 const app = express();
 dotenv.config();
 
-app.use("/", (res, req) => {
-  res.send("Server is runnig");
+const arr = [
+  {
+    id: 1,
+    course: "Mern",
+  },
+  {
+    id: 2,
+    course: "Mean",
+  },
+  {
+    id: 3,
+    course: "Dot Net",
+  },
+];
+
+app.get("/", (req, res) => {
+  res.send(arr);
 });
 
 mongoose
